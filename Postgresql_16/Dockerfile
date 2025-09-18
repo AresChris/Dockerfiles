@@ -1,0 +1,10 @@
+FROM postgres:16
+
+ENV POSTGRES_DB=mydatabase2
+ENV POSTGRES_USER=chris
+ENV POSTGRES_PASSWORD=root
+
+RUN apt-get update
+RUN apt-get install -y --fix-missing openssh-client openssh-server
+
+CMD ["docker-entrypoint.sh", "postgres"]
